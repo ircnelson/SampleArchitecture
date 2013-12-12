@@ -1,26 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 using Autofac;
+using SampleArchiteture.Dominio.Entities;
+using SampleArchiteture.Dominio.Repositories;
+using SampleArchiteture.Infraestrutura.Data;
+using SampleArchiteture.Infraestrutura.EntityFramework.Context;
+using SampleArchiteture.Infraestrutura.IoC;
 
 namespace SampleArchiteture.ConsoleApplication
 {
     class Program
     {
-        private static IContainer Container { get; set; }
-
         static void Main(string[] args)
         {
-            var builder = new ContainerBuilder();
+            IoC.Configure();
             
-            Container = builder.Build();
-
-            using (var scope = Container.BeginLifetimeScope())
+            using (var scope = IoC.Container)
             {
-                
+                var unitOfWork = scope.Resolve<IUnitOfWork>();
+                var clienteRepository = scope.Resolve<IClienteRepository>();
+
+                unitOfWork.Commit();
             }
+            
         }
     }
 }

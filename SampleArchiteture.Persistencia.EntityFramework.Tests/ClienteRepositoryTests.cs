@@ -1,16 +1,13 @@
-﻿using System;
-using System.Data.Common;
-using System.Data.Entity;
+﻿using System.Data.Common;
 using Effort;
 using NUnit.Framework;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Exceptions;
 using SampleArchiteture.Dominio.Repositories;
-using SampleArchiteture.Infraestrutura.Data;
-using SampleArchiteture.Persistencia.EntityFramework.Context;
-using SampleArchiteture.Persistencia.EntityFramework.Repositories;
+using SampleArchiteture.Infraestrutura.EntityFramework.Context;
+using SampleArchiteture.Infraestrutura.EntityFramework.Repositories;
 
-namespace SampleArchiteture.Persistencia.EntityFramework.Tests
+namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
 {
     public class ClienteRepositoryTests
     {

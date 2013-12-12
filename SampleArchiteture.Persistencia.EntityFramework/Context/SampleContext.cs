@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
+﻿using System.Data.Common;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Infraestrutura.Data;
 
-namespace SampleArchiteture.Persistencia.EntityFramework.Context
+namespace SampleArchiteture.Infraestrutura.EntityFramework.Context
 {
     public class SampleContext : DbContext, IUnitOfWork
     {

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12319C99-81D2-45EC-BF9D-061FFC9767F5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{185535A0-D02A-40CB-B1EE-28C6F85F1EBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleArchiteture.ConsoleApplication</RootNamespace>
-    <AssemblyName>SampleArchiteture.ConsoleApplication</AssemblyName>
+    <RootNamespace>SampleArchiteture.Infraestrutura.IoC</RootNamespace>
+    <AssemblyName>SampleArchiteture.Infraestrutura.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,9 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,20 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IoC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SampleArchiteture.Dominio\SampleArchiteture.Dominio.csproj">
       <Project>{DAB44369-ED87-4BDE-A57F-4C0790147F79}</Project>
       <Name>SampleArchiteture.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleArchiteture.Infraestrutura.IoC\SampleArchiteture.Infraestrutura.IoC.csproj">
-      <Project>{185535A0-D02A-40CB-B1EE-28C6F85F1EBF}</Project>
-      <Name>SampleArchiteture.Infraestrutura.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleArchiteture.Infraestrutura\SampleArchiteture.Infraestrutura.csproj">
       <Project>{6763CA8E-C9C9-4170-BE00-B97943AA531F}</Project>

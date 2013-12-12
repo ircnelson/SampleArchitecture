@@ -2,18 +2,13 @@
 using System.Linq;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
-using SampleArchiteture.Persistencia.EntityFramework.Context;
+using SampleArchiteture.Infraestrutura.EntityFramework.Context;
 
-namespace SampleArchiteture.Persistencia.EntityFramework.Repositories
+namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
         private readonly DbContext _context;
-
-        public ClienteRepository()
-        {
-            _context = new SampleContext();
-        }
 
         public ClienteRepository(DbContext context)
         {
