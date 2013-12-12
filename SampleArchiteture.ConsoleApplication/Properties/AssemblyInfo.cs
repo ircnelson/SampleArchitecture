@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SampleArchiteture.Infraestrutura.EntityFramework.Tests")]
+[assembly: AssemblyTitle("SampleArchiteture.ConsoleApplication")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SampleArchiteture.Infraestrutura.EntityFramework.Tests")]
+[assembly: AssemblyProduct("SampleArchiteture.ConsoleApplication")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8c24fd6c-5af0-4fab-8cb7-d18795dcec79")]
+[assembly: Guid("5eb12a0d-a5ef-4258-aecf-c32229350968")]
 
 // Version information for an assembly consists of the following four values:
 //

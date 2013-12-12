@@ -7,8 +7,8 @@
     <ProjectGuid>{6B5CC9A4-3C2C-4831-A861-88C2F495BB15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleArchiteture.Persistencia.EntityFramework</RootNamespace>
-    <AssemblyName>SampleArchiteture.Persistencia.EntityFramework</AssemblyName>
+    <RootNamespace>SampleArchiteture.Infraestrutura.EntityFramework</RootNamespace>
+    <AssemblyName>SampleArchiteture.Infraestrutura.EntityFramework</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
