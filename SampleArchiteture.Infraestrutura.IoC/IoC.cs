@@ -19,6 +19,12 @@ namespace SampleArchiteture.Infraestrutura.IoC
 
             builder.RegisterType<SampleContext>().As<DbContext, IUnitOfWork>().InstancePerLifetimeScope();
 
+            var typeofRepository = typeof (Repository<,>);
+            builder.RegisterAssemblyTypes(typeofRepository.Assembly)
+                .Where(t => typeofRepository.IsAssignableFrom(t) && t.Name.EndsWith("Repository", StringComparison.Ordinal))
+                .AsSelf()
+                .InstancePerDependency();
+
             builder.RegisterType<ClienteRepository>().As<IClienteRepository>().InstancePerDependency();
 
             var typeofServicebase = typeof(IServiceBase);
