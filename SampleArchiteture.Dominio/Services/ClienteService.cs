@@ -1,4 +1,5 @@
-﻿using SampleArchiteture.Dominio.Repositories;
+﻿using SampleArchiteture.Dominio.Entities;
+using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Dominio.Services
 {
@@ -9,6 +10,15 @@ namespace SampleArchiteture.Dominio.Services
         public ClienteService(IClienteRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
+        }
+
+        public Cliente InscreverCliente(int id)
+        {
+            var cliente = _clienteRepository.Get(id);
+
+            cliente.RecebeNovidades = true;
+
+            return cliente;
         }
     }
 }

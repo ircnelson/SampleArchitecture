@@ -1,25 +1,27 @@
-﻿using System.Data.Common;
-using Effort;
+﻿using Autofac;
 using NUnit.Framework;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Exceptions;
 using SampleArchiteture.Dominio.Repositories;
-using SampleArchiteture.Infraestrutura.EntityFramework.Context;
-using SampleArchiteture.Infraestrutura.EntityFramework.Repositories;
+using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
 {
     public class ClienteRepositoryTests
     {
-        private SampleContext _context;
+        private IUnitOfWork _unitOfWork;
         private IClienteRepository _clienteRepository;
+        private IContainer Container { get; set; }
 
         [SetUp]
         public void Setup()
         {
-            DbConnection dbConnection = DbConnectionFactory.CreateTransient();
-            _context = new SampleContext(dbConnection);
-            _clienteRepository = new ClienteRepository(_context);
+            IoC.IoC.Configure(new TestesModule());
+
+            Container = IoC.IoC.Container;
+
+            _clienteRepository = Container.Resolve<IClienteRepository>();
+            _unitOfWork = Container.Resolve<IUnitOfWork>();
         }
 
         [Test]
@@ -68,7 +70,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
 
             _clienteRepository.Add(cliente);
 
-            _context.Commit();
+            _unitOfWork.Commit();
 
             return cliente;
         }

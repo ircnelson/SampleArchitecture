@@ -37,6 +37,7 @@
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -60,7 +61,7 @@
       <Project>{6763CA8E-C9C9-4170-BE00-B97943AA531F}</Project>
       <Name>SampleArchiteture.Infraestrutura</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleArchiteture.Persistencia.EntityFramework\SampleArchiteture.Infraestrutura.EntityFramework.csproj">
+    <ProjectReference Include="..\SampleArchiteture.Infraestrutura.EntityFramework\SampleArchiteture.Infraestrutura.EntityFramework.csproj">
       <Project>{6B5CC9A4-3C2C-4831-A861-88C2F495BB15}</Project>
       <Name>SampleArchiteture.Infraestrutura.EntityFramework</Name>
     </ProjectReference>

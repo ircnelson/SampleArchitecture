@@ -13,6 +13,7 @@ namespace SampleArchiteture.Dominio.Entities
         public string Nome { get; set; }
         public Endereco Endereco { get; set; }
         public bool Ativo { get; private set; }
+        public bool RecebeNovidades { get; internal set; }
 
         public Cliente()
         {
