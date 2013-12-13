@@ -61,6 +61,36 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
             clienteDoBancoDados.Inativar();
         }
 
+        [Test]
+        public void DeveRemoverUmCliente()
+        {
+            CreateClienteFake();
+
+            var clienteDoBancoDados = _clienteRepository.Get(1);
+
+            _clienteRepository.Remove(clienteDoBancoDados);
+
+            _unitOfWork.Commit();
+
+            clienteDoBancoDados = _clienteRepository.Get(1);
+
+            Assert.IsNull(clienteDoBancoDados);
+        }
+
+        [Test]
+        public void DeveRemoverUmClientePeloId()
+        {
+            CreateClienteFake();
+
+            _clienteRepository.Remove(1);
+
+            _unitOfWork.Commit();
+
+            var clienteDoBancoDados = _clienteRepository.Get(1);
+
+            Assert.IsNull(clienteDoBancoDados);
+        }
+
         private Cliente CreateClienteFake()
         {
             var cliente = new Cliente

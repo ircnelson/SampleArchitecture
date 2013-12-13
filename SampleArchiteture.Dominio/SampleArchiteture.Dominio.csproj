@@ -46,6 +46,7 @@
     <Compile Include="Repositories\IClienteRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\IServiceBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

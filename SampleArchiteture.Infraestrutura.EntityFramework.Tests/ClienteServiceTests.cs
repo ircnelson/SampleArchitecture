@@ -32,7 +32,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
         }
 
         [Test]
-        public void DeveAdicionarClienteNaListaDeNovidades()
+        public void DeveMarcarUmClienteParaReceberNovidades()
         {
             // arrange
             _clienteRepository.Add(new Cliente {Nome = "Chuck Norris"});

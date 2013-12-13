@@ -3,7 +3,7 @@ using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Dominio.Services
 {
-    public class ClienteService
+    public class ClienteService : IServiceBase
     {
         private readonly IClienteRepository _clienteRepository;
 

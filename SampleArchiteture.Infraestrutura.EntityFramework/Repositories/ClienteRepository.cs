@@ -2,37 +2,49 @@
 using System.Linq;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
-using SampleArchiteture.Infraestrutura.EntityFramework.Context;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
 {
     public class ClienteRepository : IClienteRepository
     {
-        private readonly DbContext _context;
+        private readonly DbSet<Cliente> _dbSet;
 
         public ClienteRepository(DbContext context)
         {
-            _context = context;
+            _dbSet = context.Set<Cliente>();
         }
         
         public Cliente Get(int id)
         {
-            return _context.Set<Cliente>().Find(id);
+            return _dbSet.Find(id);
         }
 
         public IQueryable<Cliente> GetAll()
         {
-            return _context.Set<Cliente>();
+            return _dbSet;
         }
 
         public void Add(Cliente entity)
         {
-            _context.Set<Cliente>().Add(entity);
+            _dbSet.Add(entity);
+        }
+
+        public void Remove(Cliente entity)
+        {
+            _dbSet.Remove(entity);
+        }
+
+        public void Remove(int id)
+        {
+            var entity = _dbSet.Find(id);
+            
+            if (entity != null)
+                Remove(entity);
         }
 
         public IQueryable<Cliente> GetAtivos()
         {
-            return _context.Set<Cliente>().Where(e => e.Ativo);
+            return _dbSet.Where(e => e.Ativo);
         }
     }
 }
