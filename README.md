@@ -1,4 +1,19 @@
-SampleArchiteture
-=================
+## Patterns & Practices
 
-Arquitetura de exemplo
+* **Uppercase**
+  * Constants
+
+* **PascalCase**
+  * Class 
+  * Methods 
+  * (Public / Protected) Properties
+  * (Public / Protected) Fields
+  * Events
+  * Enums
+  * Interface
+
+* **kamelCase**
+  * (Private) Properties
+  * (Private) Fields
+  * vars
+  * params

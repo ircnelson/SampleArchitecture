@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Common;
 using Autofac;
-using Autofac.Core;
 using Effort;
-using SampleArchiteture.Infraestrutura.EntityFramework.Context;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
 {
