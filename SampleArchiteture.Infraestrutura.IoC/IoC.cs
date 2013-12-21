@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Data.Entity;
 using Autofac;
-using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Dominio.Services;
-using SampleArchiteture.Infraestrutura.Data;
-using SampleArchiteture.Infraestrutura.EntityFramework.Context;
-using SampleArchiteture.Infraestrutura.EntityFramework.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.IoC
 {
@@ -16,17 +11,7 @@ namespace SampleArchiteture.Infraestrutura.IoC
         public static void Configure(params Module[] modules)
         {
             var builder = new ContainerBuilder();
-
-            builder.RegisterType<SampleContext>().As<DbContext, IUnitOfWork>().InstancePerLifetimeScope();
-
-            var typeofRepository = typeof (Repository<,>);
-            builder.RegisterAssemblyTypes(typeofRepository.Assembly)
-                .Where(t => typeofRepository.IsAssignableFrom(t) && t.Name.EndsWith("Repository", StringComparison.Ordinal))
-                .AsSelf()
-                .InstancePerDependency();
-
-            builder.RegisterType<ClienteRepository>().As<IClienteRepository>().InstancePerDependency();
-
+            
             var typeofServicebase = typeof(IServiceBase);
             builder.RegisterAssemblyTypes(typeofServicebase.Assembly)
                 .Where(t => typeofServicebase.IsAssignableFrom(t) && t.Name.EndsWith("Service", StringComparison.Ordinal))
