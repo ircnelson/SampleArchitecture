@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SampleArchiteture.Infraestrutura.Tests")]
+[assembly: AssemblyTitle("SampleArchiteture.Infraestrutura.NHibernate.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SampleArchiteture.Infraestrutura.Tests")]
+[assembly: AssemblyProduct("SampleArchiteture.Infraestrutura.NHibernate.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8c24fd6c-5af0-4fab-8cb7-d18795dcec79")]
+[assembly: Guid("a3642b65-26c9-430f-a3b5-122c47465eaa")]
 
 // Version information for an assembly consists of the following four values:
 //

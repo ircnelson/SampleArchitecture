@@ -20,8 +20,8 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Context
         {
         }
 
-        public DbSet<Cliente> Clientes { get; set; }
-        
+        private IDbSet<Cliente> Clientes { get; set; }
+
         public void Commit()
         {
             SaveChanges();

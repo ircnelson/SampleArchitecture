@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using NUnit.Framework;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Dominio.Services;
 using SampleArchiteture.Infraestrutura.Data;
 
-namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
+namespace SampleArchiteture.Infraestrutura.Tests.Services
 {
     public class ClienteServiceTests
     {
@@ -22,7 +17,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
         [SetUp]
         public void Setup()
         {
-            IoC.IoC.Configure(new TestesModule());
+            IoC.IoC.Configure(new EntityFrameworkModule());
 
             Container = IoC.IoC.Container;
 

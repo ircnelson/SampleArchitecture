@@ -6,8 +6,8 @@
     <ProjectGuid>{5BC4AE56-E038-4320-9832-15BE42A3B90D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleArchiteture.Infraestrutura.EntityFramework.Tests</RootNamespace>
-    <AssemblyName>SampleArchiteture.Infraestrutura.EntityFramework.Tests</AssemblyName>
+    <RootNamespace>SampleArchiteture.Infraestrutura.Tests</RootNamespace>
+    <AssemblyName>SampleArchiteture.Infraestrutura.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,6 +49,15 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.2-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="NMemory">
       <HintPath>..\packages\NMemory.1.0.0-beta9\lib\net45\NMemory.dll</HintPath>
     </Reference>
@@ -58,6 +67,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.1.0.89.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.1.0.89.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <Choose>
@@ -69,10 +84,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="ClienteRepositoryTests.cs" />
-    <Compile Include="ClienteServiceTests.cs" />
+    <Compile Include="NHibernateModule.cs" />
+    <Compile Include="Repositories\ClienteRepositoryTests.cs" />
+    <Compile Include="Services\ClienteServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestesModule.cs" />
+    <Compile Include="EntityFrameworkModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -86,6 +102,10 @@
       <Project>{185535A0-D02A-40CB-B1EE-28C6F85F1EBF}</Project>
       <Name>SampleArchiteture.Infraestrutura.IoC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SampleArchiteture.Infraestrutura.NHibernate\SampleArchiteture.Infraestrutura.NHibernate.csproj">
+      <Project>{9BECFF6D-707C-4205-8BDB-32838D0337EB}</Project>
+      <Name>SampleArchiteture.Infraestrutura.NHibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleArchiteture.Infraestrutura\SampleArchiteture.Infraestrutura.csproj">
       <Project>{6763CA8E-C9C9-4170-BE00-B97943AA531F}</Project>
       <Name>SampleArchiteture.Infraestrutura</Name>
@@ -94,6 +114,14 @@
       <Project>{6B5CC9A4-3C2C-4831-A861-88C2F495BB15}</Project>
       <Name>SampleArchiteture.Infraestrutura.EntityFramework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

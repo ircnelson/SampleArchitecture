@@ -5,7 +5,7 @@ using SampleArchiteture.Dominio.Exceptions;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 
-namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
+namespace SampleArchiteture.Infraestrutura.Tests.Repositories
 {
     public class ClienteRepositoryTests
     {
@@ -16,7 +16,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Tests
         [SetUp]
         public void Setup()
         {
-            IoC.IoC.Configure(new TestesModule());
+            IoC.IoC.Configure(new EntityFrameworkModule());
 
             Container = IoC.IoC.Container;
 
