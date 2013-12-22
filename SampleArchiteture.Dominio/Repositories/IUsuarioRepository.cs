@@ -3,12 +3,12 @@ using SampleArchiteture.Dominio.Entities;
 
 namespace SampleArchiteture.Dominio.Repositories
 {
-    public interface IClienteRepository : IRepository<Cliente, int>
+    public interface IUsuarioRepository : IRepository<Usuario, int>
     {
         /// <summary>
         /// Retorna todas as entidades que estão ativas.
         /// </summary>
-        /// <returns>Lista de cliente.</returns>
-        IQueryable<Cliente> GetAtivos();
+        /// <returns>Lista de usuario.</returns>
+        IQueryable<Usuario> GetAtivos();
     }
 }

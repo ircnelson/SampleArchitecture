@@ -1,7 +1,14 @@
 ﻿using System;
 using Autofac;
+using Autofac.Core;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
+using SampleArchiteture.Infraestrutura.NHibernate.Mapping;
 using SampleArchiteture.Infraestrutura.NHibernate.Repositories;
 using SampleArchiteture.Infraestrutura.NHibernate.Session;
 
@@ -9,18 +16,30 @@ namespace SampleArchiteture.Infraestrutura.NHibernate
 {
     public class StartupModule : Module
     {
+        protected Configuration Configuration { get; set; }   
+        protected IPersistenceConfigurer PersistenceConfigurer { get; set; }
+        protected Action<IActivatingEventArgs<ISession>> OnSessionActivating { get; set; }
+
+        public StartupModule()
+        {
+            PersistenceConfigurer = OracleDataClientConfiguration.Oracle10;
+        }
+
         protected override void Load(ContainerBuilder builder)
         {
-            var typeofRepository = typeof(Repository<,>);
-            builder.RegisterAssemblyTypes(typeofRepository.Assembly)
-                .Where(t => typeofRepository.IsAssignableFrom(t) && t.Name.EndsWith("Repository", StringComparison.Ordinal))
-                .AsSelf()
-                .InstancePerDependency();
+            var sessionFactory = Fluently.Configure()
+                .Database(PersistenceConfigurer)
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<UsuarioMap>())
+                .ExposeConfiguration(cfg => Configuration = cfg)
+                .BuildSessionFactory();
 
-            builder.RegisterType<SampleSession>().As<IUnitOfWork>().InstancePerLifetimeScope();
-            builder.RegisterType<ClienteRepository>().As<IClienteRepository>().InstancePerDependency();
+            builder.RegisterInstance(Configuration).As<Configuration>().SingleInstance();
+            builder.RegisterInstance(sessionFactory).As<ISessionFactory>().SingleInstance();
+            builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).As<ISession>().OnActivating(OnSessionActivating).InstancePerLifetimeScope();
+            builder.Register(c => new SampleSession(c.Resolve<ISessionFactory>(), c.Resolve<Configuration>())).As<IUnitOfWork>();
 
-            base.Load(builder);
+            builder.RegisterGeneric(typeof (Repository<,>)).AsSelf().InstancePerDependency();
+            builder.RegisterType<UsuarioRepository>().As<IUsuarioRepository>().InstancePerDependency();
         }
     }
 }

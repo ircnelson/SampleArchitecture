@@ -85,10 +85,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="NHibernateModule.cs" />
-    <Compile Include="Repositories\ClienteRepositoryTests.cs" />
-    <Compile Include="Services\ClienteServiceTests.cs" />
+    <Compile Include="Repositories\UsuarioRepositoryTests.cs" />
+    <Compile Include="Services\UsuarioServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityFrameworkModule.cs" />
+    <Compile Include="SetupTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

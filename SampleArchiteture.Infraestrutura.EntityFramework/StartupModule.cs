@@ -19,7 +19,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework
                 .InstancePerDependency();
 
             builder.RegisterType<SampleContext>().As<DbContext, IUnitOfWork>().InstancePerLifetimeScope();
-            builder.RegisterType<ClienteRepository>().As<IClienteRepository>().InstancePerDependency();
+            builder.RegisterType<UsuarioRepository>().As<IUsuarioRepository>().InstancePerDependency();
 
             base.Load(builder);
         }

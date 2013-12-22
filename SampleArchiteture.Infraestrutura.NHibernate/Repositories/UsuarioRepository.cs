@@ -6,15 +6,15 @@ using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
 {
-    public class ClienteRepository : Repository<Cliente, int>, IClienteRepository
+    public class UsuarioRepository : Repository<Usuario, int>, IUsuarioRepository
     {
-        public ClienteRepository(ISession session) : base(session)
+        public UsuarioRepository(ISession session) : base(session)
         {
         }
 
-        public IQueryable<Cliente> GetAtivos()
+        public IQueryable<Usuario> GetAtivos()
         {
-            return Session.Query<Cliente>().Where(e => e.Ativo);
+            return Session.Query<Usuario>().Where(e => e.Ativo);
         }
     }
 }

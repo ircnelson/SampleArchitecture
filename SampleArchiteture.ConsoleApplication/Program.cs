@@ -18,7 +18,7 @@ namespace SampleArchiteture.ConsoleApplication
             using (var scope = IoC.Container)
             {
                 var unitOfWork = scope.Resolve<IUnitOfWork>();
-                var clienteRepository = scope.Resolve<IClienteRepository>();
+                var usuarioRepository = scope.Resolve<IUsuarioRepository>();
 
                 unitOfWork.Commit();
             }

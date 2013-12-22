@@ -7,15 +7,16 @@ using SampleArchiteture.Dominio.Exceptions;
 
 namespace SampleArchiteture.Dominio.Entities
 {
-    public class Cliente
+    public class Usuario
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public Endereco Endereco { get; set; }
-        public bool Ativo { get; private set; }
-        public bool RecebeNovidades { get; internal set; }
+        public bool Ativo { get; protected set; }
+        public bool RecebeNovidades { get; protected internal set; }
 
-        public Cliente()
+        public virtual Endereco Endereco { get; set; }
+
+        public Usuario()
         {
             Ativo = true;
             Endereco = new Endereco();
@@ -24,7 +25,7 @@ namespace SampleArchiteture.Dominio.Entities
         public void Inativar()
         {
             if (!Ativo)
-                throw new ClienteException("Este cliente já está inativo.", this);
+                throw new UsuarioException("Este usuario já está inativo.", this);
 
             Ativo = false;
         }
@@ -32,7 +33,7 @@ namespace SampleArchiteture.Dominio.Entities
         public void Ativar()
         {
             if (Ativo)
-                throw new ClienteException("Este cliente já está ativo.", this);
+                throw new UsuarioException("Este usuario já está ativo.", this);
 
             Ativo = true;
         }

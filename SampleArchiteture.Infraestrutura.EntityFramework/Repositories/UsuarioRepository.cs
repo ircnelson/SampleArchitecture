@@ -5,13 +5,13 @@ using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
 {
-    public class ClienteRepository : Repository<Cliente, int>, IClienteRepository
+    public class UsuarioRepository : Repository<Usuario, int>, IUsuarioRepository
     {
-        public ClienteRepository(DbContext context) : base(context)
+        public UsuarioRepository(DbContext context) : base(context)
         {
         }
 
-        public IQueryable<Cliente> GetAtivos()
+        public IQueryable<Usuario> GetAtivos()
         {
             return EntitySet.Where(e => e.Ativo);
         }

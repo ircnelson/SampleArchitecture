@@ -20,7 +20,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Context
         {
         }
 
-        private IDbSet<Cliente> Clientes { get; set; }
+        private IDbSet<Usuario> Usuarios { get; set; }
 
         public void Commit()
         {

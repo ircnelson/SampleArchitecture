@@ -1,11 +1,10 @@
 ﻿using System.Data.Common;
 using Autofac;
 using Effort;
-using SampleArchiteture.Infraestrutura.EntityFramework;
 
 namespace SampleArchiteture.Infraestrutura.Tests
 {
-    internal class EntityFrameworkModule : StartupModule
+    internal class EntityFrameworkModule : EntityFramework.StartupModule
     {
         protected override void Load(ContainerBuilder builder)
         {
