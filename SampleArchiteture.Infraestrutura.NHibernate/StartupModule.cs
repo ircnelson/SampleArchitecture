@@ -23,6 +23,7 @@ namespace SampleArchiteture.Infraestrutura.NHibernate
         public StartupModule()
         {
             PersistenceConfigurer = OracleDataClientConfiguration.Oracle10;
+            OnSessionActivating = null;
         }
 
         protected override void Load(ContainerBuilder builder)

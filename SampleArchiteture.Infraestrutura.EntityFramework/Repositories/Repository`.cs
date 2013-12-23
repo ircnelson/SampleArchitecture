@@ -32,6 +32,9 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
 
         public TEntity Get(TKey id)
         {
+            if (id == null)
+                throw new ArgumentNullException("id");
+
             return EntitySet.Find(id);
         }
 

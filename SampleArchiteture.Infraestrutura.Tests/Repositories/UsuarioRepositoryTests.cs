@@ -42,6 +42,10 @@ namespace SampleArchiteture.Infraestrutura.Tests.Repositories
 
             usuarioDoBancoDados.Inativar();
 
+            _unitOfWork.Commit();
+
+            usuarioDoBancoDados = _usuarioRepository.Get(1);
+
             Assert.AreEqual(false, usuarioDoBancoDados.Ativo);   
         }
 
