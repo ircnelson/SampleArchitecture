@@ -4,6 +4,9 @@ using Effort;
 
 namespace SampleArchiteture.Infraestrutura.Tests
 {
+    /// <summary>
+    /// Módulo de configuração do EntityFramework para o Container de Injeção de Dependência
+    /// </summary>
     internal class EntityFrameworkModule : EntityFramework.StartupModule
     {
         protected override void Load(ContainerBuilder builder)

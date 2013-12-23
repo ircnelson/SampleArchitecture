@@ -1,22 +1,21 @@
 ## Camadas (Layers)
 
-* **Dominio**: Cont&eacute;m a representa&ccedil;&atilde;o do Neg&oacute;cio;
-* **Infraestrutura**: Suporte ao Dom&iacute;nio para dependencias externas _(Ex: Abstra&ccedil;&atilde;o de Log e perif&eacute;ricos)_;
-* **Infraestrutura.IoC**: Respons&aacute;vel pela inje&ccedil;&atilde;o de depend&ecirc;ncia;
-* **Infraestrutura.Tests**: Cont&eacute;m os testes de Integra&ccedil;&atilde;o;
-* **Infraestrutura.EntityFramework**: Implementa&ccedil;&atilde;o de Persist&ecirc;ncia de dados utilizando o ORM EntityFramework;
-* **Infraestrutura.NHibernate**: Implementa&ccedil;&atilde;o de Persist&ecirc;ncia de dados utilizando o ORM NHibernate;
+* **Dominio**: Contém a representação do Negócio;
+* **Infraestrutura**: Suporte ao Domínio para dependencias externas _(Ex: Abstração de Log e periféricos)_;
+* **Infraestrutura.IoC**: Responsável pela injeção de dependência;
+* **Infraestrutura.Tests**: Contém os testes de Integração;
+* **Infraestrutura.EntityFramework**: Implementação de Persistência de dados utilizando o ORM EntityFramework;
+* **Infraestrutura.NHibernate**: Implementação de Persistência de dados utilizando o ORM NHibernate;
 
 ## Tecnologias usadas
-* **Autofac**: Container de Inje&ccedil;&atilde;o de Depend&ecirc;ncia;
-* **NUnit**: Asser&ccedil;&atilde;o dos testes;
+* **Autofac**: Container de Injeção de Dependência;
+* **NUnit**: Asserção dos testes;
 * **EntityFramework**: ORM;
 * **Nhibernate**: ORM;
-* **Effort**: Banco de dados em mem&oacute;ria para testes com EntityFramework;
-* **SQLite**: Banco de dados em mem&oacute;ria para testes com NHibernate;
+* **Effort**: Banco de dados em memória para testes com EntityFramework;
+* **SQLite**: Banco de dados em memória para testes com NHibernate;
 
-## Padr&otilde;es e Melhores Pr&aacute;ticas (Patterns & Best Practices)
-
+## Padrões e Melhores Práticas (Patterns & Best Practices)
 * **Uppercase**
   * Constants
 * **PascalCase**

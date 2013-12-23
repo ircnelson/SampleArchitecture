@@ -6,6 +6,9 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace SampleArchiteture.Infraestrutura.Tests
 {
+    /// <summary>
+    /// Módulo de configuração do NHibernate para o Container de Injeção de Dependência
+    /// </summary>
     internal class NHibernateModule : NHibernate.StartupModule
     {
         public NHibernateModule()

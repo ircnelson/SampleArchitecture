@@ -5,7 +5,6 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
-using NHibernate.Tool.hbm2ddl;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 using SampleArchiteture.Infraestrutura.NHibernate.Mapping;

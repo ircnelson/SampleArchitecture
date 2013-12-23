@@ -23,6 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Apresentacao", "4. Apres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Infraestrutura.NHibernate", "SampleArchiteture.Infraestrutura.NHibernate\SampleArchiteture.Infraestrutura.NHibernate.csproj", "{9BECFF6D-707C-4205-8BDB-32838D0337EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Docs", "0. Docs", "{511E80A2-4DC2-4B07-BE3F-13C288AFA71B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,10 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using Autofac;
-using SampleArchiteture.Dominio.Entities;
+﻿using Autofac;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
-using SampleArchiteture.Infraestrutura.EntityFramework.Context;
 using SampleArchiteture.Infraestrutura.IoC;
 
 namespace SampleArchiteture.ConsoleApplication
