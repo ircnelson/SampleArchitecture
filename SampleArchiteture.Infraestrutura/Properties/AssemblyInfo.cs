@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
+// ReSharper disable RedundantUsingDirective
 using System.Runtime.CompilerServices;
+// ReSharper restore RedundantUsingDirective
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 

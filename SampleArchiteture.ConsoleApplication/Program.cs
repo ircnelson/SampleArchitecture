@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 using SampleArchiteture.Infraestrutura.IoC;
@@ -15,6 +16,10 @@ namespace SampleArchiteture.ConsoleApplication
             {
                 var unitOfWork = scope.Resolve<IUnitOfWork>();
                 var usuarioRepository = scope.Resolve<IUsuarioRepository>();
+
+                var usuario = usuarioRepository.Get(1);
+
+                Console.WriteLine(usuario);
 
                 unitOfWork.Commit();
             }

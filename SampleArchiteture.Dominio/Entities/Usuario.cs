@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SampleArchiteture.Dominio.Exceptions;
+﻿using SampleArchiteture.Dominio.Exceptions;
 
 namespace SampleArchiteture.Dominio.Entities
 {

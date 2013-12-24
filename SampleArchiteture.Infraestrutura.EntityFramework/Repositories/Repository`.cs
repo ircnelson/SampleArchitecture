@@ -1,40 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
 {
-    public abstract class Repository<TEntity, TKey> : IRepository<TEntity,  TKey>
+    /// <summary>
+    /// Repositório genérico para EntityFramework.
+    /// </summary>
+    /// <typeparam name="TEntity">Entidade</typeparam>
+    /// <typeparam name="TKey">DataType da chave primária</typeparam>
+    public abstract class Repository<TEntity, TKey> : Repository, IRepository<TEntity,  TKey>
         where TEntity : class
         where TKey : IComparable
     {
 
         private DbSet<TEntity> _entitySet;
 
-        private readonly DbContext _context;
+        protected Repository(DbContext context) : base(context)
+        {
+        }
 
         protected DbSet<TEntity> EntitySet
         {
             get
             {
-                return _entitySet ?? (_entitySet = _context.Set<TEntity>());
+                return _entitySet ?? (_entitySet = Context.Set<TEntity>());
             }
-        }
-
-        protected Repository(DbContext context)
-        {
-            _context = context;
         }
 
         public TEntity Get(TKey id)
         {
-            if (id == null)
-                throw new ArgumentNullException("id");
-
             return EntitySet.Find(id);
         }
 
@@ -61,9 +57,6 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
 
         public void Remove(TKey id)
         {
-            if (id == null)
-                throw new ArgumentNullException("id");
-
             var entity = EntitySet.Find(id);
 
             Remove(entity);

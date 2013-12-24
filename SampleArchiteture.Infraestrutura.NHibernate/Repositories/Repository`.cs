@@ -6,30 +6,21 @@ using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
 {
-    public class Repository<TEntity, TKey> : IRepository<TEntity, TKey>
+    /// <summary>
+    /// Repositório genérico para NHibernate.
+    /// </summary>
+    /// <typeparam name="TEntity">Entidade</typeparam>
+    /// <typeparam name="TKey">DataType da chave primária</typeparam>
+    public class Repository<TEntity, TKey> : Repository, IRepository<TEntity, TKey>
         where TEntity : class
         where TKey : IComparable
     {
-        private readonly ISession _session;
-
-        protected ISession Session
+        public Repository(ISession session) : base(session)
         {
-            get
-            {
-                return _session;
-            }
-        }
-
-        public Repository(ISession session)
-        {
-            _session = session;
         }
 
         public TEntity Get(TKey id)
         {
-            if (id == null)
-                throw new ArgumentNullException("id");
-
             return Session.Get<TEntity>(id);
         }
 
@@ -56,9 +47,6 @@ namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
 
         public void Remove(TKey id)
         {
-            if (id == null)
-                throw new ArgumentNullException("id");
-
             var entity = Get(id);
 
             Session.Delete(entity);

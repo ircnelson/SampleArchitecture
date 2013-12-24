@@ -8,7 +8,6 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Context
     public class SampleContext : DbContext, IUnitOfWork
     {
         public SampleContext()
-            : base("name=SampleContext")
         {
         }
 
@@ -20,7 +19,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Context
         {
         }
 
-        private IDbSet<Usuario> Usuarios { get; set; }
+        protected IDbSet<Usuario> Usuarios { get; set; }
 
         public void Commit()
         {

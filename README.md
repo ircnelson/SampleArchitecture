@@ -26,7 +26,7 @@
   * Events
   * Enums
   * Interface
-* **kamelCase**
+* **camelCase**
   * (Private) Properties
   * (Private) Fields
   * vars
