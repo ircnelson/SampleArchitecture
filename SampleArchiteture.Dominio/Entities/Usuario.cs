@@ -1,4 +1,5 @@
 ﻿using SampleArchiteture.Dominio.Exceptions;
+using SampleArchiteture.Dominio.Resources;
 
 namespace SampleArchiteture.Dominio.Entities
 {
@@ -20,7 +21,7 @@ namespace SampleArchiteture.Dominio.Entities
         public void Inativar()
         {
             if (!Ativo)
-                throw new UsuarioException("Este usuario já está inativo.", this);
+                throw new UsuarioException(Messages.UsuarioInativo, this);
 
             Ativo = false;
         }
@@ -28,7 +29,7 @@ namespace SampleArchiteture.Dominio.Entities
         public void Ativar()
         {
             if (Ativo)
-                throw new UsuarioException("Este usuario já está ativo.", this);
+                throw new UsuarioException(Messages.UsuarioAtivo, this);
 
             Ativo = true;
         }
