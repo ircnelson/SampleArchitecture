@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Docs", "0. Docs", "{511E
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Dominio.Tests", "SampleArchiteture.Dominio.Tests\SampleArchiteture.Dominio.Tests.csproj", "{B226320B-6D5B-4143-98A3-B90C42A5D0FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{9BECFF6D-707C-4205-8BDB-32838D0337EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BECFF6D-707C-4205-8BDB-32838D0337EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BECFF6D-707C-4205-8BDB-32838D0337EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B226320B-6D5B-4143-98A3-B90C42A5D0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B226320B-6D5B-4143-98A3-B90C42A5D0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B226320B-6D5B-4143-98A3-B90C42A5D0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B226320B-6D5B-4143-98A3-B90C42A5D0FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{6763CA8E-C9C9-4170-BE00-B97943AA531F} = {E594FB98-DA75-4279-95CA-49CAC60CBA1C}
 		{9BECFF6D-707C-4205-8BDB-32838D0337EB} = {E594FB98-DA75-4279-95CA-49CAC60CBA1C}
 		{5BC4AE56-E038-4320-9832-15BE42A3B90D} = {33DB9A9F-CC26-433D-8AAB-E2FB7F00396D}
+		{B226320B-6D5B-4143-98A3-B90C42A5D0FC} = {33DB9A9F-CC26-433D-8AAB-E2FB7F00396D}
 		{12319C99-81D2-45EC-BF9D-061FFC9767F5} = {0EB8FEAF-FAB8-420C-85AC-BE1D7711BC72}
 	EndGlobalSection
 EndGlobal

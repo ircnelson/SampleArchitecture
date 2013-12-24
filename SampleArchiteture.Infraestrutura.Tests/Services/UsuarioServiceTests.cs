@@ -7,7 +7,7 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Infraestrutura.Tests.Services
 {
-    public class UsuarioServiceTests
+    internal class UsuarioServiceTests
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;

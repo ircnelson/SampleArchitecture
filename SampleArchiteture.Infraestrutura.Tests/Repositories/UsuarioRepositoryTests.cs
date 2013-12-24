@@ -7,7 +7,7 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Infraestrutura.Tests.Repositories
 {
-    public class UsuarioRepositoryTests
+    internal class UsuarioRepositoryTests
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;
@@ -50,19 +50,6 @@ namespace SampleArchiteture.Infraestrutura.Tests.Repositories
         }
 
         [Test]
-        [ExpectedException(typeof (UsuarioException))]
-        public void NaoPodeInativarUmUsuarioInativo()
-        {
-            CreateUsuarioFake();
-
-            var usuarioDoBancoDados = _usuarioRepository.Get(1);
-
-            usuarioDoBancoDados.Inativar();
-
-            usuarioDoBancoDados.Inativar();
-        }
-
-        [Test]
         public void DeveRemoverUmUsuario()
         {
             CreateUsuarioFake();
@@ -94,10 +81,7 @@ namespace SampleArchiteture.Infraestrutura.Tests.Repositories
 
         private Usuario CreateUsuarioFake()
         {
-            var usuario = new Usuario
-            {
-                Nome = "Nelson"
-            };
+            var usuario = new Usuario();
 
             _usuarioRepository.Add(usuario);
 

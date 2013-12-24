@@ -3,7 +3,7 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 
-namespace SampleArchiteture.Infraestrutura.Tests
+namespace SampleArchiteture.Infraestrutura.Tests.Modules
 {
     /// <summary>
     /// Módulo de configuração do NHibernate para o Container de Injeção de Dependência

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using SampleArchiteture.Infraestrutura.Tests.Modules;
 
 namespace SampleArchiteture.Infraestrutura.Tests
 {

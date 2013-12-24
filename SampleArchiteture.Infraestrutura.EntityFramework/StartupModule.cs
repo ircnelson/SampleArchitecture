@@ -12,16 +12,15 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<SampleContext>().As<DbContext, IUnitOfWork>().InstancePerLifetimeScope();
+
             var typeofRepository = typeof(Repository<,>);
             builder.RegisterAssemblyTypes(typeofRepository.Assembly)
                 .Where(t => typeofRepository.IsAssignableFrom(t) && t.Name.EndsWith("Repository", StringComparison.Ordinal))
                 .AsSelf()
                 .InstancePerDependency();
 
-            builder.RegisterType<SampleContext>().As<DbContext, IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<UsuarioRepository>().As<IUsuarioRepository>().InstancePerDependency();
-
-            base.Load(builder);
         }
     }
 }

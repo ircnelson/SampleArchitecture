@@ -2,7 +2,7 @@
 using Autofac;
 using Effort;
 
-namespace SampleArchiteture.Infraestrutura.Tests
+namespace SampleArchiteture.Infraestrutura.Tests.Modules
 {
     /// <summary>
     /// Módulo de configuração do EntityFramework para o Container de Injeção de Dependência
