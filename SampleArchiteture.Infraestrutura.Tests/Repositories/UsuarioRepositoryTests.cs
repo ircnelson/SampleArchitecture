@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using NUnit.Framework;
 using SampleArchiteture.Dominio.Entities;
-using SampleArchiteture.Dominio.Exceptions;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 

@@ -12,7 +12,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
     /// <typeparam name="TKey">DataType da chave primária</typeparam>
     public abstract class Repository<TEntity, TKey> : Repository, IRepository<TEntity,  TKey>
         where TEntity : class
-        where TKey : IComparable
+        where TKey : struct, IComparable
     {
 
         private DbSet<TEntity> _entitySet;

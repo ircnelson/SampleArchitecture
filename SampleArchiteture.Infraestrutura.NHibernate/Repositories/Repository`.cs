@@ -11,11 +11,15 @@ namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
     /// </summary>
     /// <typeparam name="TEntity">Entidade</typeparam>
     /// <typeparam name="TKey">DataType da chave primária</typeparam>
-    public class Repository<TEntity, TKey> : Repository, IRepository<TEntity, TKey>
+    public class Repository<TEntity, TKey> : Repository, 
+        IRepository<TEntity, TKey>, 
+        IReadOnlyRepository<TEntity, TKey> 
+        
         where TEntity : class
-        where TKey : IComparable
+        where TKey : struct, IComparable
     {
-        public Repository(ISession session) : base(session)
+        public Repository(ISession session)
+            : base(session)
         {
         }
 

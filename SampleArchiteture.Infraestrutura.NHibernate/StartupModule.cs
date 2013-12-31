@@ -5,6 +5,7 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Tool.hbm2ddl;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 using SampleArchiteture.Infraestrutura.NHibernate.Mapping;
@@ -21,8 +22,11 @@ namespace SampleArchiteture.Infraestrutura.NHibernate
 
         public StartupModule()
         {
-            PersistenceConfigurer = OracleDataClientConfiguration.Oracle10;
-            OnSessionActivating = null;
+            //PersistenceConfigurer = OracleDataClientConfiguration.Oracle10;
+            //OnSessionActivating = null;
+
+            PersistenceConfigurer = SQLiteConfiguration.Standard.InMemory().ShowSql();
+            OnSessionActivating = a => new SchemaExport(a.Context.Resolve<Configuration>()).Execute(true, true, false, a.Instance.Connection, null);
         }
 
         protected override void Load(ContainerBuilder builder)

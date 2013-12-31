@@ -43,8 +43,9 @@
     <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Exceptions\UsuarioException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IReadOnlyRepository`.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRepository`.cs" />
     <Compile Include="Resources\Messages.pt-BR.Designer.cs">
       <DependentUpon>Messages.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
