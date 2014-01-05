@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories

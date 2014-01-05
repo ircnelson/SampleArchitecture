@@ -14,12 +14,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework
         {
             builder.RegisterType<SampleContext>().As<DbContext, IUnitOfWork>().InstancePerLifetimeScope();
 
-            var typeofRepository = typeof(Repository<,>);
-            builder.RegisterAssemblyTypes(typeofRepository.Assembly)
-                .Where(t => typeofRepository.IsAssignableFrom(t) && t.Name.EndsWith("Repository", StringComparison.Ordinal))
-                .AsSelf()
-                .InstancePerDependency();
-
+            builder.RegisterGeneric(typeof(Repository<,>)).AsSelf().InstancePerDependency();
             builder.RegisterType<UsuarioRepository>().As<IUsuarioRepository>().InstancePerDependency();
         }
     }
