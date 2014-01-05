@@ -3,7 +3,9 @@ using SampleArchiteture.Dominio.Entities;
 
 namespace SampleArchiteture.Dominio.Repositories
 {
-    public interface IUsuarioRepository : IRepository<Usuario, int>, IReadOnlyRepository<Usuario, int>
+    public interface IUsuarioRepository : 
+        IRepository<Usuario, int>, 
+        IReadOnlyRepository<Usuario, int>
     {
         /// <summary>
         /// Retorna todas as entidades que estão ativas.

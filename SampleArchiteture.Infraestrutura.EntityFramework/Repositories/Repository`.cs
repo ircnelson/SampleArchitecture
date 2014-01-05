@@ -10,14 +10,18 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
     /// </summary>
     /// <typeparam name="TEntity">Entidade</typeparam>
     /// <typeparam name="TKey">DataType da chave primária</typeparam>
-    public abstract class Repository<TEntity, TKey> : Repository, IRepository<TEntity,  TKey>
+    public class Repository<TEntity, TKey> : Repository,
+        IRepository<TEntity, TKey>,
+        IReadOnlyRepository<TEntity, TKey>
+
         where TEntity : class
         where TKey : struct, IComparable
     {
 
         private DbSet<TEntity> _entitySet;
 
-        protected Repository(DbContext context) : base(context)
+        protected Repository(DbContext context)
+            : base(context)
         {
         }
 

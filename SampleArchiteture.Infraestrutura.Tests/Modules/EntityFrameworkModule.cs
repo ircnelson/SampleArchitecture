@@ -12,6 +12,8 @@ namespace SampleArchiteture.Infraestrutura.Tests.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.Register(c => DbConnectionFactory.CreateTransient()).As<DbConnection>();
+
+            base.Load(builder);
         }
     }
 }
