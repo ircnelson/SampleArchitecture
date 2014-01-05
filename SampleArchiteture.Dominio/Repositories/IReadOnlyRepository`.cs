@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace SampleArchiteture.Dominio.Repositories
 {
@@ -23,6 +23,6 @@ namespace SampleArchiteture.Dominio.Repositories
         /// Retorna uma coleção do tipo <typeparamref name="TEntity"/>.
         /// </summary>
         /// <returns>coleçao de <typeparamref name="TEntity"/>.</returns>
-        IQueryable<TEntity> GetAll();
+        IEnumerable<TEntity> GetAll();
     }
 }

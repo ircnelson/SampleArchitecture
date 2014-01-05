@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Linq;
 using SampleArchiteture.Dominio.Repositories;
@@ -28,7 +28,7 @@ namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
             return Session.Get<TEntity>(id);
         }
 
-        public IQueryable<TEntity> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return Session.Query<TEntity>();
         }

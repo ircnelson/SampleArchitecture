@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SampleArchiteture.Dominio.Repositories
 {
-    public interface IRepository<TEntity, in TKey>
+    public interface IRepository<in TEntity, in TKey>
         where TEntity : class
         where TKey : struct, IComparable
     {

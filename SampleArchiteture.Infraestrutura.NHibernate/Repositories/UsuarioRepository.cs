@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using NHibernate;
 using NHibernate.Linq;
 using SampleArchiteture.Dominio.Entities;
@@ -12,7 +13,7 @@ namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
         {
         }
 
-        public IQueryable<Usuario> GetAtivos()
+        public IEnumerable<Usuario> GetAtivos()
         {
             return Session.Query<Usuario>().Where(e => e.Ativo);
         }

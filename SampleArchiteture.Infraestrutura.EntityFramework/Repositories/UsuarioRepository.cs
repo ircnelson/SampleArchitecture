@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
@@ -11,7 +12,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
         {
         }
 
-        public IQueryable<Usuario> GetAtivos()
+        public IEnumerable<Usuario> GetAtivos()
         {
             return EntitySet.Where(e => e.Ativo);
         }

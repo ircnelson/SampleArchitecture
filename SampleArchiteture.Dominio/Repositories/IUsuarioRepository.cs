@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using SampleArchiteture.Dominio.Entities;
 
 namespace SampleArchiteture.Dominio.Repositories
@@ -9,6 +9,6 @@ namespace SampleArchiteture.Dominio.Repositories
         /// Retorna todas as entidades que estão ativas.
         /// </summary>
         /// <returns>Lista de usuario.</returns>
-        IQueryable<Usuario> GetAtivos();
+        IEnumerable<Usuario> GetAtivos();
     }
 }

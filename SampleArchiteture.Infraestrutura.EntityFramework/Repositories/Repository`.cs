@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using SampleArchiteture.Dominio.Repositories;
 
 namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
@@ -34,7 +34,7 @@ namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
             return EntitySet.Find(id);
         }
 
-        public IQueryable<TEntity> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return EntitySet;
         }
