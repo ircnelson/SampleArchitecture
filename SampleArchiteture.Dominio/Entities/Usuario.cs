@@ -21,7 +21,7 @@ namespace SampleArchiteture.Dominio.Entities
         public void Inativar()
         {
             if (!Ativo)
-                throw new UsuarioException(Messages.UsuarioInativo, this);
+                throw new UsuarioException(this, Messages.UsuarioInativo);
 
             Ativo = false;
         }
@@ -29,7 +29,7 @@ namespace SampleArchiteture.Dominio.Entities
         public void Ativar()
         {
             if (Ativo)
-                throw new UsuarioException(Messages.UsuarioAtivo, this);
+                throw new UsuarioException(this, Messages.UsuarioAtivo);
 
             Ativo = true;
         }

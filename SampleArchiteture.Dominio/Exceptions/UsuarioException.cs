@@ -3,20 +3,13 @@ using SampleArchiteture.Dominio.Entities;
 
 namespace SampleArchiteture.Dominio.Exceptions
 {
-    public class UsuarioException : Exception
+    public class UsuarioException : Exception<Usuario>
     {
-        public Usuario Usuario { get; private set; }
-
-        public UsuarioException(string message) : base(message)
+        public UsuarioException(Usuario target, string message, params object[] @params) : base(target, message, @params)
         {
         }
 
-        public UsuarioException(Usuario usuario) : base(usuario.ToString())
-        {
-            Usuario = usuario;
-        }
-
-        public UsuarioException(string message, Usuario usuario) : base(message, new UsuarioException(usuario))
+        public UsuarioException(Usuario target) : base(target)
         {
         }
     }

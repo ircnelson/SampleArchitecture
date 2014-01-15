@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="Exceptions\Exception`.cs" />
     <Compile Include="Exceptions\UsuarioException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IReadOnlyRepository`.cs" />
