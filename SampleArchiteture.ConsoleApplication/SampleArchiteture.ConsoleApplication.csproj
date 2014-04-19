@@ -78,7 +78,7 @@
       <Project>{185535A0-D02A-40CB-B1EE-28C6F85F1EBF}</Project>
       <Name>SampleArchiteture.Infraestrutura.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SampleArchiteture.Infraestrutura.NHibernate\SampleArchiteture.Orm.NHibernate.csproj">
+    <ProjectReference Include="..\SampleArchiteture.Orm.NHibernate\SampleArchiteture.Orm.NHibernate.csproj">
       <Project>{9BECFF6D-707C-4205-8BDB-32838D0337EB}</Project>
       <Name>SampleArchiteture.Orm.NHibernate</Name>
     </ProjectReference>

@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Dominio",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Infraestrutura", "SampleArchiteture.Infraestrutura\SampleArchiteture.Infraestrutura.csproj", "{6763CA8E-C9C9-4170-BE00-B97943AA531F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Orm.EntityFramework", "SampleArchiteture.Infraestrutura.EntityFramework\SampleArchiteture.Orm.EntityFramework.csproj", "{6B5CC9A4-3C2C-4831-A861-88C2F495BB15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Orm.EntityFramework", "SampleArchiteture.Orm.EntityFramework\SampleArchiteture.Orm.EntityFramework.csproj", "{6B5CC9A4-3C2C-4831-A861-88C2F495BB15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Armazenamento.Tests", "SampleArchiteture.Infraestrutura.Tests\SampleArchiteture.Armazenamento.Tests.csproj", "{5BC4AE56-E038-4320-9832-15BE42A3B90D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Armazenamento.Tests", "SampleArchiteture.Armazenamento.Tests\SampleArchiteture.Armazenamento.Tests.csproj", "{5BC4AE56-E038-4320-9832-15BE42A3B90D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.ConsoleApplication", "SampleArchiteture.ConsoleApplication\SampleArchiteture.ConsoleApplication.csproj", "{12319C99-81D2-45EC-BF9D-061FFC9767F5}"
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Tests", "4. Tests", "{33
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Apresentacao", "5. Apresentacao", "{0EB8FEAF-FAB8-420C-85AC-BE1D7711BC72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Orm.NHibernate", "SampleArchiteture.Infraestrutura.NHibernate\SampleArchiteture.Orm.NHibernate.csproj", "{9BECFF6D-707C-4205-8BDB-32838D0337EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleArchiteture.Orm.NHibernate", "SampleArchiteture.Orm.NHibernate\SampleArchiteture.Orm.NHibernate.csproj", "{9BECFF6D-707C-4205-8BDB-32838D0337EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Docs", "0. Docs", "{511E80A2-4DC2-4B07-BE3F-13C288AFA71B}"
 	ProjectSection(SolutionItems) = preProject
