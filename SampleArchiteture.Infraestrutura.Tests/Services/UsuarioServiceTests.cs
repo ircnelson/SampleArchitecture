@@ -5,7 +5,7 @@ using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Dominio.Services;
 using SampleArchiteture.Infraestrutura.Data;
 
-namespace SampleArchiteture.Infraestrutura.Tests.Services
+namespace SampleArchiteture.Armazenamento.Tests.Services
 {
     internal class UsuarioServiceTests
     {

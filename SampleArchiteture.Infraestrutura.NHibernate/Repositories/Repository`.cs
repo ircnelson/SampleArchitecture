@@ -4,7 +4,7 @@ using NHibernate;
 using NHibernate.Linq;
 using SampleArchiteture.Dominio.Repositories;
 
-namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
+namespace SampleArchiteture.Orm.NHibernate.Repositories
 {
     /// <summary>
     /// Repositório genérico para NHibernate.

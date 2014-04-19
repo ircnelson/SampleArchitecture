@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Mapping;
 using SampleArchiteture.Dominio.Entities;
 
-namespace SampleArchiteture.Infraestrutura.NHibernate.Mapping
+namespace SampleArchiteture.Orm.NHibernate.Mapping
 {
     public class UsuarioMap : ClassMap<Usuario>
     {

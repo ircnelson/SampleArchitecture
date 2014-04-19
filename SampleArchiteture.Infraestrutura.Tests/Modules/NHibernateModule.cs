@@ -2,13 +2,14 @@
 using FluentNHibernate.Cfg.Db;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using SampleArchiteture.Orm.NHibernate;
 
-namespace SampleArchiteture.Infraestrutura.Tests.Modules
+namespace SampleArchiteture.Armazenamento.Tests.Modules
 {
     /// <summary>
     /// Módulo de configuração do NHibernate para o Container de Injeção de Dependência
     /// </summary>
-    internal class NHibernateModule : NHibernate.StartupModule
+    internal class NHibernateModule : StartupModule
     {
         public NHibernateModule()
         {

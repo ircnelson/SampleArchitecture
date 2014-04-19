@@ -5,7 +5,7 @@ using NHibernate.Linq;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 
-namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
+namespace SampleArchiteture.Orm.NHibernate.Repositories
 {
     public class UsuarioRepository : Repository<Usuario, int>, IUsuarioRepository
     {

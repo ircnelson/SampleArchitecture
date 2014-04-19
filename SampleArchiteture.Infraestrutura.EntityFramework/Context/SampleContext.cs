@@ -3,7 +3,7 @@ using System.Data.Entity;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Infraestrutura.Data;
 
-namespace SampleArchiteture.Infraestrutura.EntityFramework.Context
+namespace SampleArchiteture.Orm.EntityFramework.Context
 {
     public class SampleContext : DbContext, IUnitOfWork
     {

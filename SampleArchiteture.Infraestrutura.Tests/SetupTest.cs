@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using SampleArchiteture.Infraestrutura.Tests.Modules;
+using SampleArchiteture.Armazenamento.Tests.Modules;
 
-namespace SampleArchiteture.Infraestrutura.Tests
+namespace SampleArchiteture.Armazenamento.Tests
 {
     public class SetupTest
     {
@@ -9,9 +9,9 @@ namespace SampleArchiteture.Infraestrutura.Tests
         {
             get
             {
-                IoC.IoC.Configure(new EntityFrameworkModule());
+                Infraestrutura.IoC.IoC.Configure(new EntityFrameworkModule());
 
-                return IoC.IoC.Container;
+                return Infraestrutura.IoC.IoC.Container;
             }
         }
     }

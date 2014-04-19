@@ -1,12 +1,11 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Autofac;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
-using SampleArchiteture.Infraestrutura.EntityFramework.Context;
-using SampleArchiteture.Infraestrutura.EntityFramework.Repositories;
+using SampleArchiteture.Orm.EntityFramework.Context;
+using SampleArchiteture.Orm.EntityFramework.Repositories;
 
-namespace SampleArchiteture.Infraestrutura.EntityFramework
+namespace SampleArchiteture.Orm.EntityFramework
 {
     public class StartupModule : Module
     {

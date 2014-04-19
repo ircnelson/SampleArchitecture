@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
+namespace SampleArchiteture.Orm.EntityFramework.Repositories
 {
     /// <summary>
     /// Classe base para um repositório EntityFramework.

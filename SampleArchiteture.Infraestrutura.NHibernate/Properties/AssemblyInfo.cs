@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SampleArchiteture.Infraestrutura.NHibernate")]
+[assembly: AssemblyTitle("SampleArchiteture.Orm.NHibernate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SampleArchiteture.Infraestrutura.NHibernate")]
+[assembly: AssemblyProduct("SampleArchiteture.Orm.NHibernate")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

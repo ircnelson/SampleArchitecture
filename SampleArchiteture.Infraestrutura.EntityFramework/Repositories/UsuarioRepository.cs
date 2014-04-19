@@ -4,7 +4,7 @@ using System.Linq;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 
-namespace SampleArchiteture.Infraestrutura.EntityFramework.Repositories
+namespace SampleArchiteture.Orm.EntityFramework.Repositories
 {
     public class UsuarioRepository : Repository<Usuario, int>, IUsuarioRepository
     {

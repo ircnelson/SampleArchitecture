@@ -3,7 +3,7 @@ using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using SampleArchiteture.Infraestrutura.Data;
 
-namespace SampleArchiteture.Infraestrutura.NHibernate.Session
+namespace SampleArchiteture.Orm.NHibernate.Session
 {
     public class SampleSession : IUnitOfWork
     {

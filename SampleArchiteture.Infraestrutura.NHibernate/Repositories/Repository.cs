@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-namespace SampleArchiteture.Infraestrutura.NHibernate.Repositories
+namespace SampleArchiteture.Orm.NHibernate.Repositories
 {
     /// <summary>
     /// Classe base para um repositório NHibernate.

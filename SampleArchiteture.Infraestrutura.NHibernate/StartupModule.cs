@@ -8,11 +8,11 @@ using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
-using SampleArchiteture.Infraestrutura.NHibernate.Mapping;
-using SampleArchiteture.Infraestrutura.NHibernate.Repositories;
-using SampleArchiteture.Infraestrutura.NHibernate.Session;
+using SampleArchiteture.Orm.NHibernate.Mapping;
+using SampleArchiteture.Orm.NHibernate.Repositories;
+using SampleArchiteture.Orm.NHibernate.Session;
 
-namespace SampleArchiteture.Infraestrutura.NHibernate
+namespace SampleArchiteture.Orm.NHibernate
 {
     public class StartupModule : Module
     {

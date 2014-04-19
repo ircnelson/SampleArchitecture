@@ -3,7 +3,7 @@ using Autofac;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 using SampleArchiteture.Infraestrutura.IoC;
-using SampleArchiteture.Infraestrutura.NHibernate;
+using SampleArchiteture.Orm.NHibernate;
 
 namespace SampleArchiteture.ConsoleApplication
 {
