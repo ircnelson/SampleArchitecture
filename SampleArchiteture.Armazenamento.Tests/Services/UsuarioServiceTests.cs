@@ -7,20 +7,17 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Armazenamento.Tests.Services
 {
-    internal class UsuarioServiceTests
+    internal class UsuarioServiceTests : TestsBase
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;
         private UsuarioService _usuarioService;
         
-        [SetUp]
-        public void Setup()
+        protected override void OnInit()
         {
-            var container = SetupTest.Container;
-
-            _unitOfWork = container.Resolve<IUnitOfWork>();
-            _usuarioRepository = container.Resolve<IUsuarioRepository>();
-            _usuarioService = container.Resolve<UsuarioService>();
+            _unitOfWork = Container.Resolve<IUnitOfWork>();
+            _usuarioRepository = Container.Resolve<IUsuarioRepository>();
+            _usuarioService = Container.Resolve<UsuarioService>();
         }
 
         [Test]

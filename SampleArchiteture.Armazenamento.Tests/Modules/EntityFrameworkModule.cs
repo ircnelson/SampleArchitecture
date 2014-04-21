@@ -1,4 +1,5 @@
-﻿using System.Data.Common;
+﻿using System;
+using System.Data.Common;
 using Autofac;
 using Effort;
 using SampleArchiteture.Orm.EntityFramework;

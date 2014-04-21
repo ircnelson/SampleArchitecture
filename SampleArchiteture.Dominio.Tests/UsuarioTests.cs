@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Exceptions;
 

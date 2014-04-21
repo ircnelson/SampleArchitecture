@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Modules\NHibernateModule.cs" />
     <Compile Include="Repositories\UsuarioRepositoryTests.cs" />
+    <Compile Include="TestsBase.cs" />
     <Compile Include="Services\UsuarioServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modules\EntityFrameworkModule.cs" />

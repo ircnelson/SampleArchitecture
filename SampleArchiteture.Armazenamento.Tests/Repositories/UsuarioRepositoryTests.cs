@@ -6,18 +6,15 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Armazenamento.Tests.Repositories
 {
-    internal class UsuarioRepositoryTests
+    internal class UsuarioRepositoryTests : TestsBase
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;
 
-        [SetUp]
-        public void Setup()
+        protected override void OnInit()
         {
-            var container = SetupTest.Container;
-
-            _usuarioRepository = container.Resolve<IUsuarioRepository>();
-            _unitOfWork = container.Resolve<IUnitOfWork>();
+            _usuarioRepository = Container.Resolve<IUsuarioRepository>();
+            _unitOfWork = Container.Resolve<IUnitOfWork>();
         }
 
         [Test]
