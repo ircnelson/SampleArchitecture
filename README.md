@@ -10,7 +10,7 @@
 
 ## Tecnologias usadas
 * **Autofac**: Container de Injeção de Dependência;
-* **NUnit**: Asserção dos testes;
+* **MS Unit**: Asserção dos testes;
 * **EntityFramework**: ORM;
 * **Nhibernate**: ORM;
 * **Effort**: Banco de dados em memória para testes com EntityFramework;
