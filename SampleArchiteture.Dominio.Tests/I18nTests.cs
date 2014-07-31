@@ -5,7 +5,8 @@ using SampleArchiteture.Dominio.Resources;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    internal class I18nTests
+    [SetUpFixture]
+    public class I18nTests
     {
         [SetUICulture("en-US")]
         [Test]

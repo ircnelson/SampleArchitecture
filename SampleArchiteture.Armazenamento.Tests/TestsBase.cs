@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace SampleArchiteture.Armazenamento.Tests
 {
-    internal abstract class TestsBase
+    public abstract class TestsBase
     {
         protected IContainer Container;
 

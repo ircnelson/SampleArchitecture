@@ -5,7 +5,8 @@ using SampleArchiteture.Dominio.Exceptions;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    internal class UsuarioTests
+    [SetUpFixture]
+    public class UsuarioTests
     {
         [Test]
         [ExpectedException(typeof(UsuarioException))]

@@ -6,7 +6,8 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Armazenamento.Tests.Repositories
 {
-    internal class UsuarioRepositoryTests : TestsBase
+    [SetUpFixture]
+    public class UsuarioRepositoryTests : TestsBase
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;

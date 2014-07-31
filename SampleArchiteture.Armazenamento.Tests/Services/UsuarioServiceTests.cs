@@ -7,7 +7,8 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Armazenamento.Tests.Services
 {
-    internal class UsuarioServiceTests : TestsBase
+    [SetUpFixture]
+    public class UsuarioServiceTests : TestsBase
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;
@@ -19,7 +20,7 @@ namespace SampleArchiteture.Armazenamento.Tests.Services
             _usuarioRepository = Container.Resolve<IUsuarioRepository>();
             _usuarioService = Container.Resolve<UsuarioService>();
         }
-
+        
         [Test]
         public void DeveMarcarUmUsuarioParaReceberNovidades()
         {
