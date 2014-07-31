@@ -11,15 +11,7 @@ namespace SampleArchiteture.ConsoleApplication
     {
         static void Main(string[] args)
         {
-            IoC.Configure(new StartupModule());
-            
-            using (var scope = IoC.Container)
-            {
-                var unitOfWork = scope.Resolve<IUnitOfWork>();
-                var usuarioRepository = scope.Resolve<IUsuarioRepository>();
-
-                Console.WriteLine(usuarioRepository);
-            }
         }
     }
+
 }

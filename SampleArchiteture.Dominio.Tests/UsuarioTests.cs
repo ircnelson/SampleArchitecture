@@ -1,14 +1,14 @@
-﻿using System;
-using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Exceptions;
+using System;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    [SetUpFixture]
+    [TestClass]
     public class UsuarioTests
     {
-        [Test]
+        [TestMethod]
         [ExpectedException(typeof(UsuarioException))]
         public void NaoDeveInativarUmUsuarioInativo()
         {

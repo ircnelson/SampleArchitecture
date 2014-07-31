@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SampleArchiteture.Armazenamento.Tests
 {
@@ -7,8 +7,12 @@ namespace SampleArchiteture.Armazenamento.Tests
     {
         protected IContainer Container;
 
-        [SetUp]
-        protected void Init()
+        public TestsBase()
+        {
+            Init();
+        }
+
+        private void Init()
         {
             Container = SetupTest.Container;
 

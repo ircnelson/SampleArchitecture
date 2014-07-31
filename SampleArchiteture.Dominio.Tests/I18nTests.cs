@@ -1,27 +1,30 @@
-﻿using System.Globalization;
-using System.Threading;
-using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleArchiteture.Dominio.Resources;
+using System.Globalization;
+using System.Threading;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    [SetUpFixture]
+    [TestClass]
     public class I18nTests
     {
-        [SetUICulture("en-US")]
-        [Test]
+        [TestMethod]
         public void DeveTrazerMensagemEmIngles()
         {
+            Assert.AreEqual(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString(), "en-US");
+
             var message = Messages.UsuarioAtivo;
 
             Assert.AreEqual("User already activated.", message);
         }
 
-        [SetUICulture("en-US")]
-        [Test]
+        [TestMethod]
         public void DeveTrazerMensagemEmPortugues()
         {
-            Messages.Culture = new CultureInfo("pt-BR");
+            Assert.AreEqual(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString(), "en-US");
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
+            Messages.Culture = Thread.CurrentThread.CurrentUICulture;
 
             var message = Messages.UsuarioAtivo;
 

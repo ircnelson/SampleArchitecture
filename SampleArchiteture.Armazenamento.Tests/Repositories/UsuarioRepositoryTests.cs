@@ -1,12 +1,12 @@
 ﻿using Autofac;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Armazenamento.Tests.Repositories
 {
-    [SetUpFixture]
+    [TestClass]
     public class UsuarioRepositoryTests : TestsBase
     {
         private IUnitOfWork _unitOfWork;
@@ -18,7 +18,7 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
             _unitOfWork = Container.Resolve<IUnitOfWork>();
         }
 
-        [Test]
+        [TestMethod]
         public void DeveCadastrarUmUsuario()
         {
             var usuario = CreateUsuarioFake();
@@ -28,7 +28,7 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
             Assert.AreEqual(usuario.Id, usuarioDoBancoDados.Id);
         }
 
-        [Test]
+        [TestMethod]
         public void DeveInativarUmUsuario()
         {
             CreateUsuarioFake();
@@ -46,7 +46,7 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
             Assert.AreEqual(false, usuarioDoBancoDados.Ativo);   
         }
 
-        [Test]
+        [TestMethod]
         public void DeveRemoverUmUsuario()
         {
             CreateUsuarioFake();
@@ -62,7 +62,7 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
             Assert.IsNull(usuarioDoBancoDados);
         }
 
-        [Test]
+        [TestMethod]
         public void DeveRemoverUmUsuarioPeloId()
         {
             CreateUsuarioFake();

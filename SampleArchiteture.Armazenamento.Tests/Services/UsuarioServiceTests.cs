@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Dominio.Services;
@@ -7,7 +7,7 @@ using SampleArchiteture.Infraestrutura.Data;
 
 namespace SampleArchiteture.Armazenamento.Tests.Services
 {
-    [SetUpFixture]
+    [TestClass]
     public class UsuarioServiceTests : TestsBase
     {
         private IUnitOfWork _unitOfWork;
@@ -20,8 +20,8 @@ namespace SampleArchiteture.Armazenamento.Tests.Services
             _usuarioRepository = Container.Resolve<IUsuarioRepository>();
             _usuarioService = Container.Resolve<UsuarioService>();
         }
-        
-        [Test]
+
+        [TestMethod]
         public void DeveMarcarUmUsuarioParaReceberNovidades()
         {
             // arrange
