@@ -1,20 +1,19 @@
 ﻿using Autofac;
-using NUnit.Framework;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Dominio.Services;
 using SampleArchiteture.Infraestrutura.Data;
+using Xunit;
 
 namespace SampleArchiteture.Infraestrutura.Tests.Services
 {
-    internal class UsuarioServiceTests
+    public class UsuarioServiceTests
     {
         private IUnitOfWork _unitOfWork;
         private IUsuarioRepository _usuarioRepository;
         private UsuarioService _usuarioService;
-        
-        [SetUp]
-        public void Setup()
+
+        public UsuarioServiceTests()
         {
             var container = SetupTest.Container;
 
@@ -23,10 +22,11 @@ namespace SampleArchiteture.Infraestrutura.Tests.Services
             _usuarioService = container.Resolve<UsuarioService>();
         }
 
-        [Test]
+        [Fact]
         public void DeveMarcarUmUsuarioParaReceberNovidades()
         {
             // arrange
+
             _usuarioRepository.Add(new Usuario
             {
                 Nome = "Chuck Norris"
@@ -38,8 +38,8 @@ namespace SampleArchiteture.Infraestrutura.Tests.Services
             var usuario = _usuarioService.InscreverUsuario(1);
 
             // assert
-            Assert.AreEqual(true, usuario.RecebeNovidades);
-            Assert.AreEqual(1, usuario.Id);
+            Assert.Equal(true, usuario.RecebeNovidades);
+            Assert.Equal(1, usuario.Id);
         }
     }
 }

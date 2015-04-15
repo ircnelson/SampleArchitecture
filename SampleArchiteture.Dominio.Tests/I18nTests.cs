@@ -1,30 +1,38 @@
 ﻿using System.Globalization;
 using System.Threading;
-using NUnit.Framework;
 using SampleArchiteture.Dominio.Resources;
+using Xunit;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    internal class I18nTests
+    public class I18nTests
     {
-        [SetUICulture("en-US")]
-        [Test]
-        public void DeveTrazerMensagemEmIngles()
+        private void SetCultureInfo(string culture = "en-US")
         {
-            var message = Messages.UsuarioAtivo;
-
-            Assert.AreEqual("User already activated.", message);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
         }
 
-        [SetUICulture("en-US")]
-        [Test]
+        [Fact]
+        public void DeveTrazerMensagemEmIngles()
+        {
+            SetCultureInfo();
+
+            var message = Messages.UsuarioAtivo;
+
+            Assert.Equal("User already activated.", message);
+        }
+
+        [Fact]
         public void DeveTrazerMensagemEmPortugues()
         {
+            SetCultureInfo();
+
             Messages.Culture = new CultureInfo("pt-BR");
 
             var message = Messages.UsuarioAtivo;
 
-            Assert.AreEqual("O usuário já está ativo.", message);
+            Assert.Equal("O usuário já está ativo.", message);
         }
     }
 }

@@ -1,23 +1,25 @@
-﻿using NUnit.Framework;
-using SampleArchiteture.Dominio.Entities;
+﻿using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Exceptions;
+using Xunit;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    internal class UsuarioTests
+    public class UsuarioTests
     {
-        [Test]
-        [ExpectedException(typeof(UsuarioException))]
+        [Fact]
         public void NaoDeveInativarUmUsuarioInativo()
         {
-            var usuario = new Usuario
+            Assert.Throws<UsuarioException>(() =>
             {
-                Nome = "Fakeman"
-            };
+                var usuario = new Usuario
+                {
+                    Nome = "Fakeman"
+                };
 
-            usuario.Inativar();
+                usuario.Inativar();
 
-            usuario.Inativar();
+                usuario.Inativar();
+            });
         }
     }
 }
