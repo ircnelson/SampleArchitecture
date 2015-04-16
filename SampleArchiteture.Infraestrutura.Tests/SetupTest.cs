@@ -9,7 +9,7 @@ namespace SampleArchiteture.Infraestrutura.Tests
         {
             get
             {
-                IoC.IoC.Configure(new NHibernateModule());
+                IoC.IoC.Configure(new EntityFrameworkModule());
 
                 return IoC.IoC.Container;
             }

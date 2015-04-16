@@ -13,7 +13,7 @@ namespace SampleArchiteture.Infraestrutura.Tests.Repositories
 
         public UsuarioRepositoryTests()
         {
-            var container = SetupTest.Container;
+            var container = SetupTest.Container.BeginLifetimeScope();
 
             _usuarioRepository = container.Resolve<IUsuarioRepository>();
             _unitOfWork = container.Resolve<IUnitOfWork>();

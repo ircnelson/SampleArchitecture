@@ -9,13 +9,13 @@ namespace SampleArchiteture.Infraestrutura.Tests.Services
 {
     public class UsuarioServiceTests
     {
-        private IUnitOfWork _unitOfWork;
-        private IUsuarioRepository _usuarioRepository;
-        private UsuarioService _usuarioService;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly UsuarioService _usuarioService;
 
         public UsuarioServiceTests()
         {
-            var container = SetupTest.Container;
+            var container = SetupTest.Container.BeginLifetimeScope();
 
             _unitOfWork = container.Resolve<IUnitOfWork>();
             _usuarioRepository = container.Resolve<IUsuarioRepository>();
