@@ -1,25 +1,25 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SampleArchiteture.Dominio.Entities;
+﻿using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Exceptions;
-using System;
+using Xunit;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    [TestClass]
     public class UsuarioTests
     {
-        [TestMethod]
-        [ExpectedException(typeof(UsuarioException))]
+        [Fact]
         public void NaoDeveInativarUmUsuarioInativo()
         {
-            var usuario = new Usuario
+            Assert.Throws<UsuarioException>(() =>
             {
-                Nome = "Fakeman"
-            };
+                var usuario = new Usuario
+                {
+                    Nome = "Fakeman"
+                };
 
-            usuario.Inativar();
+                usuario.Inativar();
 
-            usuario.Inativar();
+                usuario.Inativar();
+            });
         }
     }
 }

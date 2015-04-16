@@ -1,34 +1,38 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SampleArchiteture.Dominio.Resources;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Threading;
+using SampleArchiteture.Dominio.Resources;
+using Xunit;
 
 namespace SampleArchiteture.Dominio.Tests
 {
-    [TestClass]
     public class I18nTests
     {
-        [TestMethod]
-        public void DeveTrazerMensagemEmIngles()
+        private void SetCultureInfo(string culture = "en-US")
         {
-            Assert.AreEqual(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString(), "en-US");
-
-            var message = Messages.UsuarioAtivo;
-
-            Assert.AreEqual("User already activated.", message);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
         }
 
-        [TestMethod]
-        public void DeveTrazerMensagemEmPortugues()
+        [Fact]
+        public void DeveTrazerMensagemEmIngles()
         {
-            Assert.AreEqual(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString(), "en-US");
-
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-            Messages.Culture = Thread.CurrentThread.CurrentUICulture;
+            SetCultureInfo();
 
             var message = Messages.UsuarioAtivo;
 
-            Assert.AreEqual("O usuário já está ativo.", message);
+            Assert.Equal("User already activated.", message);
+        }
+
+        [Fact]
+        public void DeveTrazerMensagemEmPortugues()
+        {
+            SetCultureInfo();
+
+            Messages.Culture = new CultureInfo("pt-BR");
+
+            var message = Messages.UsuarioAtivo;
+
+            Assert.Equal("O usuário já está ativo.", message);
         }
     }
 }

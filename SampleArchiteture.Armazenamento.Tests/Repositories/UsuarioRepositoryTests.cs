@@ -1,41 +1,42 @@
 ﻿using Autofac;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Infraestrutura.Data;
+using Xunit;
 
-namespace SampleArchiteture.Armazenamento.Tests.Repositories
+namespace SampleArchiteture.Infraestrutura.Tests.Repositories
 {
-    [TestClass]
-    public class UsuarioRepositoryTests : TestsBase
+    public class UsuarioRepositoryTests
     {
-        private IUnitOfWork _unitOfWork;
-        private IUsuarioRepository _usuarioRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        protected override void OnInit()
+        public UsuarioRepositoryTests()
         {
-            _usuarioRepository = Container.Resolve<IUsuarioRepository>();
-            _unitOfWork = Container.Resolve<IUnitOfWork>();
+            var container = SetupTest.Container.BeginLifetimeScope();
+
+            _usuarioRepository = container.Resolve<IUsuarioRepository>();
+            _unitOfWork = container.Resolve<IUnitOfWork>();
         }
 
-        [TestMethod]
+        [Fact]
         public void DeveCadastrarUmUsuario()
         {
             var usuario = CreateUsuarioFake();
 
             var usuarioDoBancoDados = _usuarioRepository.Get(1);
 
-            Assert.AreEqual(usuario.Id, usuarioDoBancoDados.Id);
+            Assert.Equal(usuario.Id, usuarioDoBancoDados.Id);
         }
 
-        [TestMethod]
+        [Fact]
         public void DeveInativarUmUsuario()
         {
             CreateUsuarioFake();
 
             var usuarioDoBancoDados = _usuarioRepository.Get(1);
 
-            Assert.AreEqual(true, usuarioDoBancoDados.Ativo);
+            Assert.Equal(true, usuarioDoBancoDados.Ativo);
 
             usuarioDoBancoDados.Inativar();
 
@@ -43,10 +44,10 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
 
             usuarioDoBancoDados = _usuarioRepository.Get(1);
 
-            Assert.AreEqual(false, usuarioDoBancoDados.Ativo);   
+            Assert.Equal(false, usuarioDoBancoDados.Ativo);   
         }
 
-        [TestMethod]
+        [Fact]
         public void DeveRemoverUmUsuario()
         {
             CreateUsuarioFake();
@@ -59,10 +60,10 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
 
             usuarioDoBancoDados = _usuarioRepository.Get(1);
 
-            Assert.IsNull(usuarioDoBancoDados);
+            Assert.Null(usuarioDoBancoDados);
         }
 
-        [TestMethod]
+        [Fact]
         public void DeveRemoverUmUsuarioPeloId()
         {
             CreateUsuarioFake();
@@ -73,7 +74,7 @@ namespace SampleArchiteture.Armazenamento.Tests.Repositories
 
             var usuarioDoBancoDados = _usuarioRepository.Get(1);
 
-            Assert.IsNull(usuarioDoBancoDados);
+            Assert.Null(usuarioDoBancoDados);
         }
 
         private Usuario CreateUsuarioFake()
