@@ -54,12 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SampleArchiteture.Dominio\SampleArchiteture.Dominio.csproj">
-      <Project>{DAB44369-ED87-4BDE-A57F-4C0790147F79}</Project>
-      <Name>SampleArchiteture.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

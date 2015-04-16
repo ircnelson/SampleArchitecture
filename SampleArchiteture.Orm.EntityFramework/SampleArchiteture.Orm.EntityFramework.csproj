@@ -65,16 +65,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SampleArchiteture.Dominio\SampleArchiteture.Dominio.csproj">
-      <Project>{DAB44369-ED87-4BDE-A57F-4C0790147F79}</Project>
-      <Name>SampleArchiteture.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleArchiteture.Infraestrutura\SampleArchiteture.Infraestrutura.csproj">
-      <Project>{6763CA8E-C9C9-4170-BE00-B97943AA531F}</Project>
-      <Name>SampleArchiteture.Infraestrutura</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
