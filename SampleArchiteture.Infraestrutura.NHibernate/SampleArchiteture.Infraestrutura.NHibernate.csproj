@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
     </Reference>
@@ -58,7 +54,6 @@
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Repositories\Repository`.cs" />
     <Compile Include="Session\SampleSession.cs" />
-    <Compile Include="StartupModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

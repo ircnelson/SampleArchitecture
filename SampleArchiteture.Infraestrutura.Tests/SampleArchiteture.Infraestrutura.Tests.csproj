@@ -122,13 +122,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PJMT.Framework.DependencyInjection.Autofac\PJMT.Framework.DependencyInjection.Autofac.csproj">
+      <Project>{79110F69-AD2A-49CB-90F9-3E728D401A53}</Project>
+      <Name>PJMT.Framework.DependencyInjection.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PJMT.Framework.DependencyInjection.Interfaces\PJMT.Framework.DependencyInjection.Interfaces.csproj">
+      <Project>{98691815-B821-4132-A2AF-9E9EE7679454}</Project>
+      <Name>PJMT.Framework.DependencyInjection.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleArchiteture.Dominio\SampleArchiteture.Dominio.csproj">
       <Project>{DAB44369-ED87-4BDE-A57F-4C0790147F79}</Project>
       <Name>SampleArchiteture.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleArchiteture.Infraestrutura.IoC\SampleArchiteture.Infraestrutura.IoC.csproj">
-      <Project>{185535A0-D02A-40CB-B1EE-28C6F85F1EBF}</Project>
-      <Name>SampleArchiteture.Infraestrutura.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\SampleArchiteture.Infraestrutura.NHibernate\SampleArchiteture.Infraestrutura.NHibernate.csproj">
       <Project>{9BECFF6D-707C-4205-8BDB-32838D0337EB}</Project>

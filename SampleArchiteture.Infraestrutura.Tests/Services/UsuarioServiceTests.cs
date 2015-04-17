@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using PJMT.Framework.DependencyInjection.Interfaces;
 using SampleArchiteture.Dominio.Entities;
 using SampleArchiteture.Dominio.Repositories;
 using SampleArchiteture.Dominio.Services;
@@ -15,11 +16,11 @@ namespace SampleArchiteture.Infraestrutura.Tests.Services
 
         public UsuarioServiceTests()
         {
-            var container = SetupTest.Container.BeginLifetimeScope();
+            var container = SetupTest.Container;
 
-            _unitOfWork = container.Resolve<IUnitOfWork>();
-            _usuarioRepository = container.Resolve<IUsuarioRepository>();
-            _usuarioService = container.Resolve<UsuarioService>();
+            _unitOfWork = container.GetService<IUnitOfWork>();
+            _usuarioRepository = container.GetService<IUsuarioRepository>();
+            _usuarioService = container.GetService<UsuarioService>();
         }
 
         [Fact]
