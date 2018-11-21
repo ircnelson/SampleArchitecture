@@ -1,0 +1,10 @@
+language: csharp
+os:
+  - osx
+  - linux
+cache:
+  directories:
+    - tools
+solution: SampleArchitecture.sln
+script:
+  - ./build.sh --target=BuildTestAndPublishCodeCoverage --verbosity=diagnostic
