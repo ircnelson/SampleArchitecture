@@ -1,10 +1,11 @@
 language: csharp
+mono: latest
+dotnet: 2.1.402
 os:
   - osx
   - linux
 cache:
   directories:
     - tools
-solution: SampleArchitecture.sln
 script:
   - ./build.sh --target=BuildTestAndPublishCodeCoverage --verbosity=diagnostic
