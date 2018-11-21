@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/ircnelson/SampleArchiteture/badge.svg)](https://coveralls.io/github/ircnelson/SampleArchiteture)
+
 ## Camadas (Layers)
 
 * **Core**: Contém a representação do Negócio;
