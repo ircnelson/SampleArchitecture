@@ -4,7 +4,7 @@
 #tool "nuget:?package=ReportGenerator&version=4.0.4"
 #tool coveralls.io
 
-var target = Argument("target", "Build");
+var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 var skipCoverage = Argument("skipCoverage", false);
 
@@ -19,6 +19,19 @@ var coverallsToken = Context.EnvironmentVariable("COVERALLS_REPO_TOKEN");
 if (!DirectoryExists(artifactsDir)) 
 {
     CreateDirectory(artifactsDir);
+}
+
+FilePath GetFileResult(FilePath file) 
+{    
+    FilePath resultFile;
+
+    if (IsRunningOnWindows()) {
+        resultFile = rootAbsoluteDir.GetRelativePath(coverageDir.CombineWithFilePath(file));
+    } else {
+        resultFile = coverageDir.CombineWithFilePath(file);
+    }
+
+    return resultFile;
 }
 
 Task("Clean")
@@ -38,6 +51,7 @@ Task("Build")
     });
 
 Task("Test")
+    .IsDependentOn("Build")
     .Does(() => 
     {
         var projects = GetFiles("./test/**/*.csproj").ToList();
@@ -64,20 +78,20 @@ Task("Test")
                     "/p:CollectCoverage=true",
                     "/p:Exclude=\"[*.Tests]\""
                 };
-                
+
                 if (i == totalProjects - 1)
                 {
-                    coverletArgs.Add($"/p:CoverletOutput='{coverageDir}/opencover.xml'");
+                    coverletArgs.Add($"/p:CoverletOutput='{GetFileResult("opencover.xml")}'");
                     coverletArgs.Add("/p:CoverletOutputFormat=opencover");
 
                     if (totalProjects > 1) 
                     {
-                        coverletArgs.Add($"/p:MergeWith='{coverageDir}/coverage.json'");
+                        coverletArgs.Add($"/p:MergeWith='{GetFileResult("coverage.json")}'");
                     }
-                    
-                } else 
+                } 
+                else 
                 {
-                    coverletArgs.Add($"/p:CoverletOutput='{coverageDir}/coverage.json'");
+                    coverletArgs.Add($"/p:CoverletOutput='{GetFileResult("coverage.json")}'");
                     coverletArgs.Add("/p:CoverletOutputFormat=json");
                 }
 
@@ -89,13 +103,22 @@ Task("Test")
     });
 
 Task("CoverageReport")
+    .IsDependentOn("Test")
     .Does(() => {
 
-        DotNetCoreExecute(reportGenerator, $"-reports:{coverageDir.CombineWithFilePath("opencover.xml")} -targetdir:{artifactsDir.Combine("results")}");
-
+        if (IsRunningOnWindows()) 
+        {
+            ReportGenerator(coverageDir.CombineWithFilePath("opencover.xml"), artifactsDir.Combine("results"));
+        }
+        else 
+        {
+            DotNetCoreExecute(reportGenerator, $"-reports:{coverageDir.CombineWithFilePath("opencover.xml")} -targetdir:{artifactsDir.Combine("results")}");
+        }
     });
 
 Task("PublishCodeCoverage")
+    .IsDependentOn("Test")
+    .WithCriteria(() => !string.IsNullOrEmpty(coverallsToken))
     .Does(() => {
 
         CoverallsIo(coverageDir.CombineWithFilePath("opencover.xml"), new CoverallsIoSettings()
